@@ -14,7 +14,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $Movie = Movie::paginate(5);
+        $Movie = Movie::paginate(25);
         return view('index', [ 
             'movie' => $Movie
         ]);
@@ -87,7 +87,7 @@ class MovieController extends Controller
         $movie->update();
 
         // ridirezionare
-        return redirect()->route('show', ['id' => $movie->id])->with('operation_success','Movie upgrade');
+        return redirect()->route('movie.show', ['movie' => $movie->id])->with('operation_success','Movie upgrade');
     }
 
     /**
@@ -95,6 +95,8 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
-        //
+        $Books = Movie::findOrFail($movie->id);
+        $Books->delete();
+        return redirect()->route('movie.index')->with('operation_success','Movie deleted');
     }
 }

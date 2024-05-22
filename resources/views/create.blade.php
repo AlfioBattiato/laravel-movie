@@ -6,7 +6,7 @@
   
 <div class="row justify-content-center">
             <div class="col-md-6">
-                <h2 class="mt-5 mb-4">Inserisci libro</h2>
+                <h2 class="mt-5 mb-4">Insert new movie</h2>
 
 
 
@@ -14,8 +14,8 @@
                 @csrf
                 <!-- questo qua sopra ci crea un token nascosto contro un attacco hacker tipo -->
                     <div class="form-group">
-                        <label for="Name">Title</label>
-                        <input type="text" class="form-control" id="Name"   name="Name" placeholder="insert movie title">
+                        <label for="name">Title</label>
+                        <input type="text" class="form-control" id="name"   name="name" placeholder="insert movie title">
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
@@ -34,7 +34,7 @@
                         <input type="text" class="form-control" id="img" name="img"  placeholder="insert url img"/>
                     </div>
                  
-                    <button type="submit" class="btn bg-red mt-5">Add</button>
+                    <button type="submit" class="btn btn-outline-success mt-5">Add</button>
                 </form>
             </div>
         </div>

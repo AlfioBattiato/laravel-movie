@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer>
     </script>
@@ -18,17 +19,21 @@
 <body>
     @include('includes.nav')
 
-    <div class="container">
+    @session('operation_success')
+        <div class="alert alert-success" role="alert">
+           {{ session('operation_success') }}
+        </div>
+    @endsession
         <main>
             @yield('content')
         </main>
-    </div>
+  
 
 
 
 
 
-    <footer class="bg-black text-white pt-4 mt-5">
+    <footer class="bg-black text-white pt-4  text-center">
     <div class="container">
         <div class="row">
             <!-- About Section -->
@@ -63,6 +68,7 @@
             </div>
         </div>
     </div>
+    <hr class="m-0">
     <div class="bg-black text-center py-3 mt-4">
         <div class="container">
             <p class="mb-0">&copy; 2024 MovieSite. All rights reserved.</p>

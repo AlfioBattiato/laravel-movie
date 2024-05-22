@@ -14,7 +14,7 @@ class MovieSeeder extends Seeder
      */
     public function run(): void
     {
-        Movie::factory(10)->create();
+        Movie::factory(50)->create();
 
         //     for ($i = 0; $i < 10; $i++) {
         //         DB::table('movies')->insert([
